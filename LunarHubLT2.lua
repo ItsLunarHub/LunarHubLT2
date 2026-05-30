@@ -1,11 +1,7 @@
 local function fetch(url)
-    local ok, res = pcall(function()
-        return game:HttpGet(url)
-    end)
-
+    local ok, res = pcall(game.HttpGet, game, url)
     return ok and res or nil
 end
-
 local scripts = {
     "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar1.lua",
     "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar2.lua",
@@ -24,17 +20,11 @@ local scripts = {
     "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar15.lua",
     "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar16.lua",
 }
-
 for _, url in ipairs(scripts) do
     local content = fetch(url)
-
     if content then
         local func = loadstring(content)
-
-        if func then
-            task.spawn(func)
-        end
+        if func then task.spawn(func) end
     end
-
     task.wait(0.2)
-end
+endwd
