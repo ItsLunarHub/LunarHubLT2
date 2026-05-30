@@ -3,13 +3,10 @@ local function fetch(url)
     return ok and res or nil
 end
 
--- Load GUI first
 loadstring(fetch("https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar1.lua"))()
 
--- Wait for _G.LH to be ready
 repeat task.wait(0.1) until _G.LH ~= nil
 
--- Then load feature scripts
 local scripts = {
     "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar2.lua",
     "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar3.lua",
