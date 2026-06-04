@@ -23,6 +23,7 @@ local scripts = {
     "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar14.lua",
     "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar15.lua",
     "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar16.lua",
+    "https://raw.githubusercontent.com/ItsLunarHub/LunarHubLT2/main/Lunar17.lua",
 }
 for _, url in ipairs(scripts) do
     local content = fetch(url)
